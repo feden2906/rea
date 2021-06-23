@@ -1,9 +1,9 @@
 import './App.css';
-import User from "./components/users/User";
+import Posts from "./components/Post";
 
 function App() {
-  return (<div>
-    <User/>
+  return (<div className={'divka'}>
+    <Posts/>
   </div>)
 }
 

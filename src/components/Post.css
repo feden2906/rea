@@ -1,0 +1,22 @@
+li{
+    width: 600px;
+    margin: 3px;
+    padding: 2px;
+    border: 1px solid black;
+    list-style: none;
+    border-radius: 30px;
+    box-shadow: 3px 3px  #282c34;
+    background: bisque;
+}
+div{
+    text-align: center;
+}
+.divka{
+    display: flex;
+    justify-content: center;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
