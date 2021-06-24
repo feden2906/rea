@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
-import './Post.css'
-import PostC from "./PostC";
-export default function Posts(){
+import './Post.css';
+import PostC from "../PostC/PostC";
 
-    let [posts,setPosts] = useState([]);
+export default function Posts(){
+    const [posts,setPosts] = useState([]);
 
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -12,10 +12,11 @@ export default function Posts(){
                 setPosts(postsFromServer);
             });
     },[]);
+
     return(
         <ul>
         {
-            posts.map(post => <PostC item={post}/>)
+            posts.map(post => <PostC key={post.id} item={post}/>)
         }
         </ul>
     )
