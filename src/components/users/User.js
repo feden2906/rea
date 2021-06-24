@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import './User.css'
+import UserC from "./UserC";
 
 export default function Users(){
 
@@ -15,11 +16,7 @@ export default function Users(){
     return(
         <div>
             {
-              users.map(user => <div key = {user.id} >
-                  <h2>{user.name}</h2>
-                  <p>{user.username}</p>
-                  <p>{user.address.city}</p>
-              </div> )
+              users.map(user => <UserC item={user}/> )
             }
         </div>
     )
