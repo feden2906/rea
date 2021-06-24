@@ -1,10 +1,10 @@
 import './App.css';
-import User from "./components/users/User";
 
 function App() {
-  return (<div>
-    <User/>
-  </div>)
+  return (
+      <div>
+
+      </div>)
 }
 
 export default App;
