@@ -2,7 +2,7 @@ import {getUsers} from "../servises/API";
 import {useEffect, useState} from "react";
 import User from "../user/User";
 
-export default function Users(fn){
+export default function Users({fn}){
 
     let [users,setUsers] = useState([])
 
@@ -12,7 +12,7 @@ export default function Users(fn){
     return(
         <div>
             {
-                users.map(value => <User key={value.id} fn={fn} items={value}/>)
+                users.map(value => <User key={value.id} items={value} fn={fn}/>)
             }
         </div>
     )
