@@ -4,7 +4,7 @@ let options = {
     baseURL:'https://jsonplaceholder.typicode.com'
 }
 let axiosInstance = axios.create(options)
-const getPosts = () => axiosInstance('/posts')
+const getPostsByUserId = (id) => axiosInstance('/users/' + id + '/posts')
 const getUsers = () => axiosInstance('/users')
 
-export {getUsers,getPosts}
+export {getUsers, getPostsByUserId}
