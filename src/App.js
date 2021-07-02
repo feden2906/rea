@@ -15,9 +15,11 @@ function App() {
 
           <Route path={'/users'} render={() => <Users/>}/>
           <Route path={'/posts'} component={Posts}/>
+
           <Route path={'/comments'}>
               <Comments/>
           </Route>
+
       </div>
       </Router>)
 }
