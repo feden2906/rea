@@ -1,10 +1,13 @@
-import {DELETE_TODO} from "../redux/redusers/actionType/actionType";
+import { DELETE_TODO } from "../redux/redusers/actionType/actionType";
+import { useDispatch } from "react-redux";
 
-export default function DeleteTodo({item,dispatch}) {
-
+export default function DeleteTodo({item}) {
+    const dispatch = useDispatch()
 
     const handleDelete = async (e) => {
-        const response = await fetch(('http://localhost:8888/delete-todo/' + item.id), {
+        e.preventDefault()
+        dispatch({type: DELETE_TODO, payload: item.id})
+        await fetch(('http://localhost:8888/delete-todo/' + item.id), {
             method: 'DELETE'
         })
     }

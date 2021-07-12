@@ -1,4 +1,11 @@
-import {ADD_TODOS, DELETE_TODO, IS_LOADING_FALSE, IS_LOADING_TRUE, PUSH_NEW_TODO} from "./actionType/actionType";
+import {
+    ADD_TODOS,
+    CHANGE_STATUS,
+    DELETE_TODO,
+    IS_LOADING_FALSE,
+    IS_LOADING_TRUE,
+    PUSH_NEW_TODO
+} from "./actionType/actionType";
 
 const initialState = {
     todos:[],
@@ -17,7 +24,12 @@ export const todosReduser = (state = initialState, action) => {
             return {...state, todos:[...state.todos, action.payload]}
         }
         case DELETE_TODO:{
-            return {...state, todos:[...state.todos, action.payload]}
+            const newArray = state.todos.filter(value => value.id !== action.payload)
+            return {...state, todos:[...newArray]}
+        }
+        case CHANGE_STATUS:{
+            state.todos.find(value => value.id === action.payload).completed = true;
+            return {...state, todos:[...state.todos]}
         }
         default:
             return state
