@@ -2,6 +2,7 @@ import {useEffect} from "react";
 
 import {useSelector} from "react-redux";
 import {ADD_TODOS, IS_LOADING_FALSE, IS_LOADING_TRUE} from "../redux/redusers/actionType/actionType";
+import SingleTodo from "./singleTodo";
 
 
 export default function TodosList({dispatch}) {
@@ -27,15 +28,7 @@ export default function TodosList({dispatch}) {
     return (
         <div>
             {
-                todos.map(value => (
-                    <div key={value.id}>
-                        <h4>{value.title}</h4>
-                        <p>{value.description}</p>
-
-                        <p>{value.id}</p>
-                        <hr/>
-                    </div>
-                ))
+                todos.map(value => <SingleTodo key={value.id} dispatch={dispatch} item={value}/>)
             }
         </div>
     )

@@ -1,4 +1,4 @@
-import {ADD_TODOS, IS_LOADING_FALSE, IS_LOADING_TRUE, PUSH_NEW_TODO} from "./actionType/actionType";
+import {ADD_TODOS, DELETE_TODO, IS_LOADING_FALSE, IS_LOADING_TRUE, PUSH_NEW_TODO} from "./actionType/actionType";
 
 const initialState = {
     todos:[],
@@ -14,6 +14,9 @@ export const todosReduser = (state = initialState, action) => {
         case IS_LOADING_FALSE:{
             return {...state,isLoading: false}}
         case PUSH_NEW_TODO:{
+            return {...state, todos:[...state.todos, action.payload]}
+        }
+        case DELETE_TODO:{
             return {...state, todos:[...state.todos, action.payload]}
         }
         default:
