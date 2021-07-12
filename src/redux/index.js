@@ -1,6 +1,7 @@
 import {rootReduser} from "./redusers";
-
-const {createStore} = require("redux");
+import {createStore} from "redux";
 
 
 export const store = createStore(rootReduser)
+
+
